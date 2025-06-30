@@ -93,7 +93,7 @@ function App() {
       if (!res.ok) throw new Error('Failed to fetch itinerary');
       const data = await res.json();
       setResult(data);
-      setCities(''); // Clear the search bar after results
+      setCities('');
     } catch (err) {
       setError(err.message);
     } finally {

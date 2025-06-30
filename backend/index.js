@@ -20,7 +20,7 @@ const julepClient = new Julep({
 
 const AGENT_ID = process.env.JULEP_AGENT_ID;
 if (!AGENT_ID) {
-  console.error('❌  JULEP_AGENT_ID must be set in your .env');
+  console.error('JULEP_AGENT_ID must be set in your .env');
   process.exit(1);
 }
 
@@ -141,5 +141,5 @@ app.post('/api/itinerary', async (req, res) => {
   res.json(out);
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`🚀  Foodie-tour API running on ${PORT}`));
+const PORT = process.env.PORT ;
+app.listen(PORT, () => console.log(` running on ${PORT}`));
