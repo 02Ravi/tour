@@ -1,0 +1,121 @@
+.city-card.minimal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+  padding: 24px 18px 18px 18px;
+  border: 1px solid #f1f5f9;
+  transition: box-shadow 0.2s;
+}
+.city-card.minimal:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+.city-header.minimal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.city-name.minimal {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #22223b;
+}
+.dining-style.minimal {
+  font-size: 0.95rem;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 500;
+}
+.dining-style.minimal.indoor {
+  background: #fef9c3;
+  color: #b45309;
+}
+.dining-style.minimal.outdoor {
+  background: #bbf7d0;
+  color: #166534;
+}
+.weather-section.minimal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #334155;
+}
+.weather-icon.minimal {
+  font-size: 1.2rem;
+}
+.dishes-list.minimal {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.dish-item.minimal {
+  background: #f0fdf4;
+  color: #166534;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+.restaurants-section.minimal {
+  margin-bottom: 10px;
+}
+.restaurant-group.minimal {
+  margin-bottom: 6px;
+}
+.restaurant-dish.minimal {
+  font-size: 1rem;
+  color: #2563eb;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+.restaurant-list.minimal {
+  list-style: none;
+  padding: 0 0 0 8px;
+  margin: 0;
+}
+.restaurant-item.minimal {
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  margin-bottom: 3px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+.rest-name.minimal {
+  font-weight: 500;
+  color: #22223b;
+}
+.rest-rating.minimal {
+  color: #f59e42;
+  font-weight: 500;
+  margin-left: 2px;
+}
+.rest-address.minimal {
+  color: #64748b;
+  font-size: 0.93rem;
+}
+.itinerary-section.minimal {
+  margin-top: 10px;
+  background: #f0f9ff;
+  padding: 10px 12px;
+  border-radius: 7px;
+}
+.itinerary-list.minimal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.meal-label.minimal {
+  font-weight: 500;
+  color: #2563eb;
+  margin-right: 4px;
+} 
