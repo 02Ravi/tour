@@ -26,10 +26,7 @@
    npm start
    ```
 
-The React app will run on [http://localhost:3000](http://localhost:3000) and the backend on [http://localhost:3001](http://localhost:3001).
 
-### Run Both with `concurrently`
-For convenience, you can use [`concurrently`](https://www.npmjs.com/package/concurrently) to run both servers:
 
 1. Install globally (if not already):
    ```bash
@@ -39,3 +36,7 @@ For convenience, you can use [`concurrently`](https://www.npmjs.com/package/conc
    ```bash
    concurrently "cd backend && npm start" "cd frontend && npm start"
    ``` 
+
+
+Below is the loom video
+https://www.loom.com/share/c8c209891f974dba97b748e62583e52c
