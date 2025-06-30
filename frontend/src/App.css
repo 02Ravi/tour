@@ -735,3 +735,24 @@
   font-weight: 500;
   box-shadow: 0 1px 4px rgba(99,102,241,0.06);
 }
+
+.city-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.city-cards-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+.city-cards-row > .city-outer-block {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .city-cards-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

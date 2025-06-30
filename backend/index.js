@@ -79,9 +79,8 @@ app.post('/api/itinerary', async (req, res) => {
     return res.status(400).json({ error: 'cities must be a non-empty array' });
   }
 
-  const out = {};
-
-  for (const city of cities) {
+  // Process all cities in parallel for better performance
+  const results = await Promise.all(cities.map(async (city) => {
     try {
       const { data: w } = await weatherClient.get('/weather', { params: { q: city } });
       const forecastStr = `${w.weather[0].description}, ${w.main.temp.toFixed(1)}°C`;
@@ -93,9 +92,9 @@ app.post('/api/itinerary', async (req, res) => {
 
       let summary;
       if (diningStyle === 'outdoor') {
-        summary = `Today in ${city}: expect ${forecastStr}. It's sunny, so for breakfast and dinner, outdoor dining is recommended; for lunch, indoor seating would be cozier. Here’s your foodie plan:`;
+        summary = `Today in ${city}: expect ${forecastStr}. It's sunny, so for breakfast and dinner, outdoor dining is recommended; for lunch, indoor seating would be cozier. Here's your foodie plan:`;
       } else {
-        summary = `Today in ${city}: expect ${forecastStr}. Given the conditions, indoor dining is recommended for all meals. Here’s your foodie plan:`;
+        summary = `Today in ${city}: expect ${forecastStr}. Given the conditions, indoor dining is recommended for all meals. Here's your foodie plan:`;
       }
 
       const dishes = await julepJSONPrompt(
@@ -124,19 +123,21 @@ app.post('/api/itinerary', async (req, res) => {
         });
       });
 
-      out[city] = {
+      return [city, {
         weather: forecastStr,
         weatherRaw: w,
         diningStyle,
         dishes,
         restaurants,
         itinerary
-      };
+      }];
     } catch (err) {
       console.error(`Error for ${city}:`, err);
-      out[city] = { error: err.message || 'Internal failure' };
+      return [city, { error: err.message || 'Internal failure' }];
     }
-  }
+  }));
+
+  const out = Object.fromEntries(results);
 
   res.json(out);
 });
